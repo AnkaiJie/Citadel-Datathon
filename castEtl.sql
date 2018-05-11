@@ -1,0 +1,26 @@
+insert into datafest.datafestmain (date,companyid,jobid,country,stateprovince,city,avgoverallrating,numreviews,industry,normtitle,normtitlecategory,descriptioncharacterlength,descriptionwordcount,experiencerequired,estimatedsalary,salarycurrency,joblanguage,supervisingjob,licenserequiredjob,educationrequirements,jobagedays,clicks,localclicks)
+select
+NULLIF(date, ''),
+NULLIF(companyid, ''),
+NULLIF(jobid, ''),
+NULLIF(country, ''),
+NULLIF(stateprovince, ''),
+NULLIF(city, ''),
+cast(NULLIF(avgoverallrating, '') as numeric),
+cast(NULLIF(numreviews, '') as numeric),
+NULLIF(industry, ''),
+NULLIF(normtitle, ''),
+NULLIF(normtitlecategory, ''),
+cast(NULLIF(descriptioncharacterlength, '') as int),
+cast(NULLIF(descriptionwordcount, '') as int),
+cast(NULLIF(experiencerequired, '') as numeric),
+cast(NULLIF(estimatedsalary, '') as int),
+NULLIF(salarycurrency, ''),
+NULLIF(joblanguage, ''),
+cast(NULLIF(supervisingjob, '') as numeric),
+cast(NULLIF(licenserequiredjob, '') as numeric),
+NULLIF(educationrequirements, ''),
+cast(NULLIF(jobagedays, '') as int),
+cast(NULLIF(clicks, '') as int),
+cast(NULLIF(localclicks, '') as int)
+from datafest.datafesttest
