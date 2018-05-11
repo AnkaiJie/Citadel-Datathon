@@ -23,7 +23,7 @@ def get_create_table(tableName, path, keys=[], allString=False):
 	initial = pd.io.sql.get_schema(df, tableName, keys=keys)
 
 	if allString:
-		initial = initial.replace('TEXT', 'varchar(128)').replace('INTEGER', 'varchar(16)').replace('REAL','varchar(32)')
+		initial = initial.replace('INTEGER', 'text').replace('REAL','text')
 	else:
 		initial = initial.replace('INTEGER', 'int').replace('REAL','DECIMAL')
 	print(',\n'.join(['NULLIF(' + a + ', \'\')' for a in list(df.columns)]))

@@ -1,0 +1,1 @@
+copy test.datafestload from '/tmp/datafest.csv' with (format csv, delimiter',', header)

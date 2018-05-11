@@ -1,6 +1,6 @@
 insert into datafest.datafestmain (date,companyid,jobid,country,stateprovince,city,avgoverallrating,numreviews,industry,normtitle,normtitlecategory,descriptioncharacterlength,descriptionwordcount,experiencerequired,estimatedsalary,salarycurrency,joblanguage,supervisingjob,licenserequiredjob,educationrequirements,jobagedays,clicks,localclicks)
 select
-NULLIF(date, ''),
+to_date(NULLIF(date, ''), 'MM-DD-YYYY'),
 NULLIF(companyid, ''),
 NULLIF(jobid, ''),
 NULLIF(country, ''),
